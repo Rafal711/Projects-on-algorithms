@@ -4,7 +4,7 @@ Projekt z Badań Operacyjnych 2.
 
 Włączenie aplikacji -> uruchomienie pliku main.py
 
-Rafal711:
+Rafal711:  
 	- algorytm_SA.py  
 	- funkcja_celu.py  
 	- gui.py  
