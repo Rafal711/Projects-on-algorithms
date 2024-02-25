@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "author": "Miłosz Błachowiak, Rafał Guzek",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -11.49, "left": -71.49, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -161.82,
+      "left": -70.36,
+      "attrs": { "temperature": "27.2", "humidity": "37.5" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": 11.17,
+      "left": 293.08,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": -207.94, "left": 237.04, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -314.11, "left": 303.26, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -93.57,
+      "left": 42.04,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -93.5,
+      "left": 68.96,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -93.1,
+      "left": 92.55,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -267.17,
+      "left": 143.07,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -94.96,
+      "left": 126.21,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -276.36,
+      "left": 74.58,
+      "attrs": { "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "red", [ "h-55.3", "v262.94", "h198.66" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v6.74", "h-0.36", "v19.82", "h-17.15" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-75.32", "v153.43", "h-124.26" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-38.92", "v187.18", "h-170.16" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ],
+    [ "uno:GND.1", "ir1:GND", "black", [ "v-12.67", "h214.52" ] ],
+    [ "ir1:VCC", "uno:5V", "red", [ "v341.63", "h-179.62" ] ],
+    [ "ir1:DAT", "uno:A0", "green", [ "v325.04", "h-141.22" ] ],
+    [ "led1:A", "uno:8", "green", [ "v196.92", "h-66.56" ] ],
+    [ "led1:C", "r4:1", "black", [ "v0" ] ],
+    [ "r4:2", "uno:GND.1", "black", [ "v19.29", "h-118.07" ] ],
+    [ "dht1:SDA", "uno:12", "green", [ "v18.98", "h108.87" ] ],
+    [ "rgb1:R", "r1:1", "red", [ "v0" ] ],
+    [ "uno:11", "r1:2", "red", [ "v0" ] ],
+    [ "uno:10", "r2:2", "green", [ "v0" ] ],
+    [ "uno:9", "r3:2", "blue", [ "v0" ] ],
+    [ "rgb1:G", "r2:1", "green", [ "v0" ] ],
+    [ "rgb1:B", "r3:1", "blue", [ "v0" ] ],
+    [ "rgb1:COM", "uno:GND.1", "black", [ "h-50.89", "v209.84" ] ]
+  ],
+  "dependencies": {}
+}
